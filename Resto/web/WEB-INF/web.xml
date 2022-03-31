@@ -9,6 +9,10 @@
         <servlet-class>Control.ListeType</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ListeServeur</servlet-name>
+        <servlet-class>Control.ListeServeur</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ListeCommande</servlet-name>
         <servlet-class>Control.ListeCommande</servlet-class>
     </servlet>
@@ -24,9 +28,21 @@
         <servlet-name>ListePrixReviens</servlet-name>
         <servlet-class>Control.ListePrixReviens</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>insertCommande</servlet-name>
+        <servlet-class>Control.insertCommande</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListePourBoire</servlet-name>
+        <servlet-class>Control.ListePourBoire</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListeProduit</servlet-name>
         <url-pattern>/ListeProduit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListeServeur</servlet-name>
+        <url-pattern>/ListeServeur</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListeType</servlet-name>
@@ -47,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>ListePrixReviens</servlet-name>
         <url-pattern>/ListePrixReviens</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>insertCommande</servlet-name>
+        <url-pattern>/insertCommande</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListePourBoire</servlet-name>
+        <url-pattern>/ListePourBoire</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

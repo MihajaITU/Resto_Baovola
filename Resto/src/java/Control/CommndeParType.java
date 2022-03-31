@@ -27,6 +27,7 @@ public class CommndeParType extends HttpServlet {
           response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter())
             {   
+                
                 String name=request.getParameter("type");
                 Type_Produit id=new Type_Produit();
                 int idType=id.getIdType(name);

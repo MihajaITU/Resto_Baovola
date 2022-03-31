@@ -35,15 +35,6 @@ create table type_produit(
  );
 
 
-create table commande(
-    id int,
-    id_Table int,
-    id_Produit int,
-    unite int,
-    primary key(id),
-    foreign key (id_Table) references tables(id),
-    foreign key (id_Produit) references produit(id)
-);
 
 create table historique_stock_ingredient(
     id int,
@@ -90,12 +81,38 @@ create table prixProduit(
     foreign key (id_produit) references Produit(id)
 );
 
+create table Serveur(
+    id int,
+    nom varchar(50),
+    primary key(id)
+);
+
+create table commande(
+    id int,
+    id_Table int,
+    dateCommande date,
+    primary key(id),
+    foreign key (id_Table) references tables(id)
+);
+
+create table DetailsCommande(
+    id int,
+    id_Commande int,
+    id_Produit int, 
+    id_Serveur int,
+    prixVente float,
+    primary key(id),
+    foreign key(id_Commande) references commande,
+    foreign key (id_Produit) references produit,
+    foreign key (id_serveur) references serveur
+);
+
 
 create sequence produit_sq start with 1 increment by 1 ;
 create sequence ingredient_sq start with 1 increment by 1 ;
 create sequence tables_sq start with 1 increment by 1;
 create sequence recette_sq start with 1 increment by 1;
-create sequence commande_sq start with 1 increment by 1;
+
 create sequence historique_stock_ingredient_sq start with 1 increment by 1 ;
 create sequence produit_par_multiple_sq start with 1 increment by 1;
 create sequence ingredient_par_multiple_sq start with 1 increment by 1 ;
@@ -103,6 +120,10 @@ create sequence type_produit_sq start with 1 increment by 1 ;
 create sequence achatIngredient_sq start with 1 increment by 1;
 
 create sequence prixProduit_sq start with 1 increment by 1;
+create sequence serveur_sq start with 1 increment by 1 ;
+
+create sequence commande_sq start with 1 increment by 1;
+create sequence DetailsCommande_sq start with 1 increment by 1;
 
 
 
@@ -162,13 +183,42 @@ insert into Recette values (nextval('recette_sq'),2,2,100);
 insert into Recette values (nextval('recette_sq'),2,6,100);
 insert into Recette values (nextval('recette_sq'),2,5,10);
 
+--28/03/2021
+
+insert into serveur values (nextval('serveur_sq'),'Jean');
+insert into serveur values (nextval('serveur_sq'),'Bob');
+insert into serveur values (nextval('serveur_sq'),'Marie');
 
 
+insert into tables values (nextval('tables_sq'),'Table1');
+insert into tables values (nextval('tables_sq'),'Table2');
+insert into tables values (nextval('tables_sq'),'Table3');
 
+--table,serveur,date
+insert into commande values (nextval('commande_sq'),1,now());
+insert into commande values (nextval('commande_sq'),1,'2022-03-25');
+insert into commande values (nextval('commande_sq'),1,'2022-03-27');
+insert into commande values (nextval('commande_sq'),1,'2022-03-29');
 
+--idCommande,idProduit,id_serveur,prixVente
+insert into DetailsCommande values (nextval('detailsCommande_sq'),1,1,1,20000);
+insert into DetailsCommande values (nextval('detailsCommande_sq'),1,2,1,15000);
+insert into DetailsCommande values (nextval('detailsCommande_sq'),1,3,1,10000);
+insert into DetailsCommande values (nextval('detailsCommande_sq'),1,4,2,10000);
+insert into DetailsCommande values (nextval('detailsCommande_sq'),1,5,2,15000);
 
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),2,1,20000);
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),2,2,1000);
 
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),3,2,15000);
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),3,3,10000);
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),3,4,10000);
 
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),4,1,20000);
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),4,2,15000);
+-- insert into DetailsCommande values (nextval('detailsCommande_sq'),4,4,10000);
+
+insert into AchatIngredient values (nextval('achatIngredient_sq'))
 
 create view prixRevientProduit as 
     select p.id as id_produit ,sum((p2.prix*r.qte)/a.referenceprix)  as prixRevient  
@@ -184,3 +234,28 @@ create view view_prixRevient as
     select prp.id_produit as idProduit,p.designation , prp.prixrevient 
     from prixrevientproduit prp 
     join  produit p on p.id=prp.id_produit 
+
+
+create view total_CommandeServeur as 
+    select dc.id_Serveur, sum(dc.prixvente) as TotalPrixVente,c.dateCommande  
+    from detailscommande dc 
+    join commande c on c.id=dc.id_commande 
+    group by id_commande,id_Serveur,dateCommande
+
+
+create view view_pourboire as 
+    select  tc.id_serveur ,s.nom,tc.totalprixvente,(tc.totalprixvente*0.02) as totalpourboire ,tc.dateCommande 
+    from total_CommandeServeur tc 
+    join serveur s on s.id=tc.id_serveur
+
+select id_serveur ,sum(totalpourboire) as totalPourBoire 
+    from view_pourboire 
+    where id_serveur=1 
+    and dateCommande>='2022-03-29' 
+    and dateCommande<='2022-03-29'  
+    group by id_serveur 
+
+    
+    
+
+

@@ -5,6 +5,11 @@
  */
 package classes;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Date;
+
 /**
  *
  * @author HASINA
@@ -12,14 +17,10 @@ package classes;
 public class Commande {
     int id;
     int id_tables;
-    int id_Produit;
-    int unite;
-
-    public Commande(int id, int id_tables, int id_Produit, int unite) {
-        this.id = id;
-        this.id_tables = id_tables;
-        this.id_Produit = id_Produit;
-        this.unite = unite;
+    Date commande;
+    
+    public Commande(){
+        
     }
 
     public int getId() {
@@ -38,19 +39,28 @@ public class Commande {
         this.id_tables = id_tables;
     }
 
-    public int getId_Produit() {
-        return id_Produit;
+
+    public Date getCommande() {
+        return commande;
     }
 
-    public void setId_Produit(int id_Produit) {
-        this.id_Produit = id_Produit;
+    public void setCommande(Date commande) {
+        this.commande = commande;
     }
 
-    public int getUnite() {
-        return unite;
+    public Commande(int id, int id_tables, Date commande) {
+        this.id = id;
+        this.id_tables = id_tables;
+        this.commande = commande;
     }
 
-    public void setUnite(int unite) {
-        this.unite = unite;
+    public void insertCommande(int idt,int ids)throws Exception
+    {
+       Connecty connecty=new Connecty();
+       Connection c= connecty.getConnex();
+       String req="insert into commande values(null,'"+idt+"','"+ids+"',now())";
+       Statement Stat = c.createStatement();
+       ResultSet res= Stat.executeQuery(req); 
+       c.close();
     }
 }

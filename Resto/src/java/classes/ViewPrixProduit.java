@@ -16,30 +16,30 @@ import java.util.Vector;
  */
 public class ViewPrixProduit {
     
-    int id;
+    int id_serveur;
     String designation;
     double prixrevient;
     double prixdevente;
 
-    public ViewPrixProduit(int id, String designation, double prixrevient, double prixdevente) {
-        this.id = id;
+    public ViewPrixProduit(int id_serveur, String designation, double prixrevient, double prixdevente) {
+        this.id_serveur = id_serveur;
         this.designation = designation;
         this.prixrevient = prixrevient;
         this.prixdevente = prixdevente;
     }
-    public ViewPrixProduit(int id, String designation, double prixrevient) {
-        this.id = id;
+    public ViewPrixProduit(int id_serveur, String designation, double prixrevient) {
+        this.id_serveur = id_serveur;
         this.designation = designation;
         this.prixrevient = prixrevient;
         
     }
 
-    public int getId() {
-        return id;
+    public int getId_serveur() {
+        return id_serveur;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_serveur(int id_serveur) {
+        this.id_serveur = id_serveur;
     }
 
     public String getDesignation() {
