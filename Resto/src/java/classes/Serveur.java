@@ -66,4 +66,20 @@ public class Serveur {
         c.close();
     	return vao;
     }
+    public int getIdServeur(String name)throws Exception
+    {
+        int retour=0;
+    	Connecty connecty=new Connecty();
+    	Connection c= connecty.getConnex();
+    	String requete="select id from serveur where nom='"+name+"'";
+    	Statement Stat = c.createStatement();
+    	ResultSet res= Stat.executeQuery(requete);
+    	Vector vecteur=new Vector(); 
+    	while(res.next())
+    	{
+    		retour = res.getInt(1);
+    	}
+        c.close();
+    	return retour;
+    }
 }

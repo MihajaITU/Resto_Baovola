@@ -6,6 +6,7 @@
 package Service;
 
 import classes.DetailsCommande;
+import classes.Produit;
 
 /**
  *
@@ -15,9 +16,14 @@ public class ServiceDetailsCommande {
     public ServiceDetailsCommande(){
         
     }
-    public void addDetails(int idc,int idp,double pv) throws Exception
+    public void addDetails(int idc,int idp,int ids,double pv) throws Exception
     {
         DetailsCommande pan=new DetailsCommande();
-        pan.insertDetails(idc,idp,pv);
+        pan.insertDetails(idc,idp,ids,pv);
+    }
+     public void ajoutCommander(Produit[] produits,int[] unite, int idc, int ids) throws Exception
+    {
+        DetailsCommande pan=new DetailsCommande();
+        pan.commander(produits,unite,idc,ids);
     }
 }

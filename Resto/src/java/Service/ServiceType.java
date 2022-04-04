@@ -17,7 +17,7 @@ public class ServiceType {
     {
         
     }
-     public Type_Produit[] findAllType() throws Exception
+    public Type_Produit[] findAllType() throws Exception
     {
         Type_Produit type=new Type_Produit();
         return type.getAllType();

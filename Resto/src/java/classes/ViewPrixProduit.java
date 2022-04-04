@@ -16,30 +16,30 @@ import java.util.Vector;
  */
 public class ViewPrixProduit {
     
-    int id_serveur;
+    int id_produit;
     String designation;
     double prixrevient;
     double prixdevente;
 
-    public ViewPrixProduit(int id_serveur, String designation, double prixrevient, double prixdevente) {
-        this.id_serveur = id_serveur;
+    public ViewPrixProduit(int id_produit, String designation, double prixrevient, double prixdevente) {
+        this.id_produit = id_produit;
         this.designation = designation;
         this.prixrevient = prixrevient;
         this.prixdevente = prixdevente;
     }
-    public ViewPrixProduit(int id_serveur, String designation, double prixrevient) {
-        this.id_serveur = id_serveur;
+    public ViewPrixProduit(int id_produit, String designation, double prixrevient) {
+        this.id_produit = id_produit;
         this.designation = designation;
         this.prixrevient = prixrevient;
         
     }
 
-    public int getId_serveur() {
-        return id_serveur;
+    public int getId_produit() {
+        return id_produit;
     }
 
-    public void setId_serveur(int id_serveur) {
-        this.id_serveur = id_serveur;
+    public void setId_produit(int id_produit) {
+        this.id_produit = id_produit;
     }
 
     public String getDesignation() {
@@ -91,7 +91,28 @@ public class ViewPrixProduit {
         c.close();
     	return vao;
     }
-    public Double getPrixDeVente(ViewPrixProduit prixDeRevient) throws Exception
+//    public Double getPrixDeVente(ViewPrixProduit prixDeRevient) throws Exception
+//    {
+//        int marge1=5000;
+//        int marge2=10000;
+//        double prixvente=0;
+//        //ViewPrixProduit view=new ViewPrixProduit();
+//        if(prixDeRevient.getPrixrevient()<marge1)
+//        {
+//            prixvente=prixDeRevient.getPrixrevient()*3;
+//            setPrixdevente(prixvente);
+//        }else if(prixDeRevient.getPrixrevient()>=marge1 && prixDeRevient.getPrixrevient()<=marge2)
+//        {
+//            prixvente=prixDeRevient.getPrixrevient()*2;
+//            setPrixdevente(prixvente);
+//        }else if(prixDeRevient.getPrixrevient()>marge2)
+//        {
+//            prixvente=prixDeRevient.getPrixrevient()*1.5;
+//            setPrixdevente(prixvente);
+//        }
+//        return prixvente;
+//    }
+      public ViewPrixProduit getPrixDeVente(ViewPrixProduit prixDeRevient) throws Exception
     {
         int marge1=5000;
         int marge2=10000;
@@ -100,32 +121,34 @@ public class ViewPrixProduit {
         if(prixDeRevient.getPrixrevient()<marge1)
         {
             prixvente=prixDeRevient.getPrixrevient()*3;
-            setPrixdevente(prixvente);
+            prixDeRevient.setPrixdevente(prixvente);
         }else if(prixDeRevient.getPrixrevient()>=marge1 && prixDeRevient.getPrixrevient()<=marge2)
         {
             prixvente=prixDeRevient.getPrixrevient()*2;
-            setPrixdevente(prixvente);
+            prixDeRevient.setPrixdevente(prixvente);
         }else if(prixDeRevient.getPrixrevient()>marge2)
         {
             prixvente=prixDeRevient.getPrixrevient()*1.5;
-            setPrixdevente(prixvente);
+            prixDeRevient.setPrixdevente(prixvente);
         }
-        return prixvente;
+        return prixDeRevient;
     }
-//    public ViewPrixProduit[] getPrixParView(ViewPrixProduit[] prixDeRevient) throws Exception
-//    {
-//       ViewPrixProduit[] retour= new ViewPrixProduit[1000];
-//        for(int i=0;i<prixDeRevient.length;i++)
-//        {
-//            retour[i]=getPrixDeVente(prixDeRevient[i]);
-//        }
-//        return retour;
-//    }
-//    
-//    public ViewPrixProduit[] getAllPrixVente()throws Exception
-//    {
-//       ViewPrixProduit[] prixDeRevient=getPrixDeRevient();
-//       ViewPrixProduit[] prix=getPrixParView(prixDeRevient);
-//       return prixDeRevient;
-//    }
+    
+    public ViewPrixProduit[] getPrixParView(ViewPrixProduit[] prixDeRevient) throws Exception
+    {
+       ViewPrixProduit[] retour= new ViewPrixProduit[prixDeRevient.length];
+        for(int i=0;i<prixDeRevient.length;i++)
+        {
+            retour[i]=getPrixDeVente(prixDeRevient[i]);
+        }
+        return retour;
+    }
+    
+    public ViewPrixProduit[] getAllPrixVente()throws Exception
+    {
+       ViewPrixProduit[] prixDeRevient=getPrixDeRevient();
+       ViewPrixProduit[] prix=getPrixParView(prixDeRevient);
+       return prix;
+    }
+    
 }

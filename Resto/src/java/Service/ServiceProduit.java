@@ -26,4 +26,9 @@ public class ServiceProduit {
         Produit produit=new Produit();
         return produit.getAllProduitByType(idType);
     }
+    public int findIdProduit(String n) throws Exception
+    {
+        Produit pan=new Produit();
+        return pan.getIdProduit(n);
+    }
 }

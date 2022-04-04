@@ -73,13 +73,37 @@ public class DetailsCommande {
     }
     
     
-    public void insertDetails(int idc,int idp,double pv)throws Exception
+    public void insertDetails(int idc,int idp,int ids,double pv)throws Exception
     {
        Connecty connecty=new Connecty();
        Connection c= connecty.getConnex();
-       String req="insert into detailscommande values(null,'"+idc+"','"+idp+"','"+pv+"')";
+       String req="insert into detailscommande values(null,'"+idc+"','"+idp+"','"+ids+"','"+pv+"')";
        Statement Stat = c.createStatement();
        ResultSet res= Stat.executeQuery(req); 
        c.close();
+    }
+    public void insertParUnite(int idc,int idp,int ids,double pv,int unite)throws Exception
+    {
+        for (int i = 0; i < unite; i++) {
+            insertDetails(idc, idp, ids, pv);
+        }
+    }
+    public void commander(Produit[] produits,int[] unite, int idc, int ids)throws Exception
+    {
+        ViewPrixProduit[] liste= new ViewPrixProduit().getAllPrixVente();
+        ViewPrixProduit[] inserer= new ViewPrixProduit[produits.length];
+        int compt=0;
+        for (int i = 0; i < produits.length; i++) {
+            for (int j = 0; j < liste.length; j++) {
+                if(produits[i].getId()==liste[j].getId_produit())
+                {
+                    inserer[compt]=liste[j];
+                    compt++;
+                }
+            }
+        }
+        for (int i = 0; i < inserer.length; i++) {
+            insertParUnite(idc, inserer[i].getId_produit(), ids, inserer[i].getPrixdevente(), unite[i]);
+        }
     }
 }

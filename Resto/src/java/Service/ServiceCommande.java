@@ -15,9 +15,14 @@ public class ServiceCommande {
     public ServiceCommande(){
         
     }
-    public void addCommande(int idt,int ids) throws Exception
+    public void addCommande(int idt) throws Exception
     {
         Commande pan=new Commande();
-        pan.insertCommande(idt,ids);
+        pan.insertCommande(idt);
+    }
+     public int findIdCommande() throws Exception
+    {
+        Commande pan=new Commande();
+        return pan.getIdCommande();
     }
 }

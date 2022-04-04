@@ -33,14 +33,15 @@ public class ListePrixReviens extends HttpServlet {
         try (PrintWriter out = response.getWriter())
             {   
                 ServiceViewPrixProduit sp=new ServiceViewPrixProduit();
-                ViewPrixProduit[] liste=sp.findPrixDeRevient();
-                Double prx=0.0;
-               
-                for(int i=0;i<liste.length;i++)
-                {
-                    prx=sp.findPrixDeVente(liste[i]);
-                    liste[i].setPrixdevente(prx);
-                }
+                ViewPrixProduit[] liste=sp.findAllPrixVente();
+                
+//                Double prx=0.0;
+//               
+//                for(int i=0;i<liste.length;i++)
+//                {
+//                    prx=sp.findPrixDeVente(liste[i]);
+//                    liste[i].setPrixdevente(prx);
+//                }
                 request.setAttribute("listePrix",liste);
                 //request.setAttribute("listeVente",liste);
                 request.getRequestDispatcher("/listePrixProduit.jsp").forward(request, response);

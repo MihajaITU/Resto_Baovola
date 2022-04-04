@@ -54,13 +54,29 @@ public class Commande {
         this.commande = commande;
     }
 
-    public void insertCommande(int idt,int ids)throws Exception
+    public void insertCommande(int idt)throws Exception
     {
        Connecty connecty=new Connecty();
        Connection c= connecty.getConnex();
-       String req="insert into commande values(null,'"+idt+"','"+ids+"',now())";
+       String req="insert into commande values(null,'"+idt+"',now())";
        Statement Stat = c.createStatement();
        ResultSet res= Stat.executeQuery(req); 
        c.close();
+    }
+    
+     public int getIdCommande()throws Exception
+    {
+        int retour=0;
+    	Connecty connecty=new Connecty();
+    	Connection c= connecty.getConnex();  
+    	String requete="select max(id) from commande ";
+    	Statement Stat = c.createStatement();
+    	ResultSet res= Stat.executeQuery(requete);
+    	while(res.next())
+    	{
+    		retour = Integer.parseInt(res.getString(1));
+    	}
+        c.close();
+    	return retour;    	
     }
 }

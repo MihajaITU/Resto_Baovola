@@ -22,19 +22,19 @@ public class ServiceViewPrixProduit {
         ViewPrixProduit produit=new ViewPrixProduit();
         return produit.getPrixDeRevient();
     }
-    public Double findPrixDeVente(ViewPrixProduit prixDeRevient) throws Exception
-    {
-        ViewPrixProduit produit=new ViewPrixProduit();
-        return produit.getPrixDeVente(prixDeRevient);
-    }
+//    public Double findPrixDeVente(ViewPrixProduit prixDeRevient) throws Exception
+//    {
+//        ViewPrixProduit produit=new ViewPrixProduit();
+//        return produit.getPrixDeVente(prixDeRevient);
+//    }
 //    public Double[] findPrixParView(ViewPrixProduit[] prixDeRevient) throws Exception
 //    {
 //        ViewPrixProduit produit=new ViewPrixProduit();
 //        return produit.getPrixParView(prixDeRevient);
 //    }
-//      public ViewPrixProduit[] findAllPrixVente() throws Exception
-//    {
-//        ViewPrixProduit produit=new ViewPrixProduit();
-//        return produit.getAllPrixVente();
-//    }
+      public ViewPrixProduit[] findAllPrixVente() throws Exception
+    {
+        ViewPrixProduit produit=new ViewPrixProduit();
+        return produit.getAllPrixVente();
+    }
 }
