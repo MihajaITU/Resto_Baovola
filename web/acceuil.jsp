@@ -40,10 +40,7 @@
 </head>
 
 <body>
-      <% 
-        Type_Produit[] listeType=(Type_Produit[])request.getAttribute("listeType");
-        Produit[] listeByType=(Produit[])request.getAttribute("byType");
-    %>
+      
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -116,25 +113,24 @@
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
               
-              <%for(int i=0;i<listeType.length;i++){%>
+              
             <ul id="menu-flters">
               <li data-filter="*" class="filter-active">Afficher tout</li>
-              <a href="/Resto/TypeProduit?type=<% out.print(listeType[i].getDesignation());%>"><li data-filter=".filter-<% out.print(listeType[i].getDesignation());%>"><% out.print(listeType[i].getDesignation());%></li></a>
+              <a href="#"><li data-filter=".filter-special">pate</li></a>
             </ul>
-              <% } %>
+              
           </div>
         </div>
         <div class="row menu-container">
-           <%for(int i=0;i<listeByType.length;i++){%> 
-          <div class="col-lg-6 menu-item filter-<% out.print(listeByType[i].getDesignation());%>">
+           
+          <div class="col-lg-6 menu-item filter-special">
             <div class="menu-content">
-              <a href="#"><% out.print(listeByType[i].getDesignation());%></a><span>0 Ar</span>
+              <a href="#"></a><span>0 Ar</span>
             </div>
             <div class="menu-ingredients">
-             <% out.print(listeByType[i].getDesignation());%>
+             teste
             </div>
           </div>
-            <% } %>
         </div>
       </div>
     </section><!-- End Menu Section -->
