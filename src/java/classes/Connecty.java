@@ -14,20 +14,21 @@ import java.sql.SQLException;
  * @author HASINA
  */
 public class Connecty {
-    private final static String URL = "jdbc:postgresql://localhost:5432/resto" ;
+    private final static String URL =  "";
     private final static String USER = "postgres" ;
     private final static String PASSWORD = "admin" ;
+
     public Connection getConnex() throws ClassNotFoundException {
         Connection connect = null ;
         try {
             Class.forName("org.postgresql.Driver");
-            connect = DriverManager.getConnection(URL, USER, PASSWORD);
+            connect = DriverManager.getConnection("jdbc:postgresql://localhost:5432/resto", "postgres", "admin");
             System.out.println("connection = "+connect);
             return connect ;
         }
         catch (SQLException limit){
             limit.printStackTrace();
-            System.out.println(limit.getMessage());
+//            System.out.println(limit.getMessage());
         }
         return null;
     }
