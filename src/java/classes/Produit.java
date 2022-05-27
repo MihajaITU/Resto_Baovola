@@ -61,6 +61,7 @@ public class Produit
     	Connecty connecty=new Connecty();
     	Connection c= connecty.getConnex();
     	String requete="select * from produit";
+//        System.out.println("connection :"+c);
     	Statement Stat = c.createStatement();
     	ResultSet res= Stat.executeQuery(requete);
     	Vector vecteur=new Vector(); 
