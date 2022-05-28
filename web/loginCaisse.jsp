@@ -1,4 +1,10 @@
 <%-- 
+    Document   : loginCaisse
+    Created on : 28 mai 2022, 19:22:45
+    Author     : ASUS TUF
+--%>
+
+<%-- 
     Document   : acceuil
     Created on : 24 mai 2022, 10:07:52
     Author     : jeant
@@ -45,17 +51,17 @@
                 <div class="container">
 
                     <div class="section-title">
-                        <h2>Connexion <span>Admin</span></h2>
+                        <h2>Connexion <span>Caisse</span></h2>
                         <p>Connectez-vous dès maintenant.</p>
                     </div>
 
-                    <form action="Stock" method="post" >
+                    <form action="/LoginAdmin" method="post" role="form" class="php-email-form">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 form-group">
 
                             </div>
                             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                                <input type="text" class="form-control" name="mail" id="email" placeholder="Nom d'utilisateur" data-rule="email" data-msg="Please enter a valid email" value="jean@gmail.com">
+                                <input type="text" class="form-control" name="login" id="email" placeholder="Nom d'utilisateur" data-rule="email" data-msg="Please enter a valid email">
                                 <div class="validate"></div>
                             </div>
                         </div>
@@ -64,7 +70,7 @@
 
                             </div>
                             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-                                <input type="password" class="form-control" name="mdp" id="email" placeholder="Mot de passe" data-rule="email" data-msg="Please enter a valid email" value="123">
+                                <input type="password" class="form-control" name="mdp" id="email" placeholder="Mot de passe" data-rule="email" data-msg="Please enter a valid email">
                                 <div class="validate"></div>
                             </div>
                         </div>

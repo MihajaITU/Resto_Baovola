@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class Connecty {
      private final static String URL = "jdbc:postgresql://localhost/resto" ;
     private final static String USER = "postgres" ;
-    private final static String PASSWORD = "123" ;
+    private final static String PASSWORD = "admin" ;
     public Connection getConnex() throws ClassNotFoundException {
         Connection connect = null ;
         try {

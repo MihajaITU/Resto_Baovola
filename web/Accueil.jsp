@@ -61,7 +61,7 @@
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
 
-                <a href="#book-a-table" class="book-a-table-btn scrollto">Connexion Admin</a>
+                <a href="loginAdmin.jsp" class="book-a-table-btn scrollto">Connexion Admin</a>
 
             </div>
         </header><!-- End Header -->
@@ -82,10 +82,10 @@
                                     <h2 class="animate__animated animate__fadeInDown"><span>Resto </span>Gasy</h2>
                                     <p class="animate__animated animate__fadeInUp">Veuillez choisir votre profil : </p>
                                     <div>
-                                        <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Serveur</a>
+                                        <a href="#" class="btn-menu animate__animated animate__fadeInUp scrollto">Serveur</a>
                                         <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Cuisine</a>
                                         <a href="loginLivreur.jsp" class="btn-menu animate__animated animate__fadeInUp scrollto">Livreur </a>
-                                        <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Caisse</a>
+                                        <a href="loginCaisse.jsp" class="btn-book animate__animated animate__fadeInUp scrollto">Caisse</a>
                                     </div>
                                 </div>
                             </div>

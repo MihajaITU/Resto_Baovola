@@ -72,6 +72,10 @@
         <servlet-name>LogOutLivreur</servlet-name>
         <servlet-class>Control.LogOutLivreur</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginAdmin</servlet-name>
+        <servlet-class>Control.LoginAdmin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListeProduit</servlet-name>
         <url-pattern>/ListeProduit</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>LogOutLivreur</servlet-name>
         <url-pattern>/LogOutLivreur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginAdmin</servlet-name>
+        <url-pattern>/LoginAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -31,15 +31,13 @@
                     <tr>
                         <th scope="col">Ingredient</th>
                         <th scope="col">Quantite</th>
-                        <th scope="col">Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% for (int i = 0; i < liste.length; i++) {%>
                     <tr>
                         <td><%= liste[i].getIngredient()%></td>
-                        <td><%= liste[i].getIngredientrestante()%></td>
-                        <td>@<%= liste[i].getDateStock()%></td>
+                        <td><%= liste[i].getIngredientrestante()%> mg</td>
                     </tr>
                     <%  }%>
                 </tbody>

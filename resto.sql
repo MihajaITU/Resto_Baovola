@@ -542,3 +542,13 @@ select designation,sum(valeur ) as total from viewtotal_paiementByType
 	
     --idtable , total , date
     
+
+    create table admin (
+        id int,
+    nom varchar(50),
+    mail varchar(100),
+    mdp varchar(100),
+    primary key(id)
+    )
+
+    create sequence admin_sq start with 1 increment by 1 ;
