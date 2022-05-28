@@ -18,8 +18,12 @@ public class ViewPrixProduit {
     
     int id_produit;
     String designation;
+    String intitule;
     double prixrevient;
     double prixdevente;
+    float prix;
+
+   
 
     public ViewPrixProduit(int id_produit, String designation, double prixrevient, double prixdevente) {
         this.id_produit = id_produit;
@@ -33,11 +37,26 @@ public class ViewPrixProduit {
         this.prixrevient = prixrevient;
         
     }
+    
+     public ViewPrixProduit(String prod, String type, float prix) {
+        this.designation = prod;
+        this.intitule = type;
+        this.prix = prix;
+        
+    }
 
     public int getId_produit() {
         return id_produit;
     }
+    
+     public String getIntitule() {
+        return intitule;
+    }
 
+    public void setIntitule(String intitule) {
+        this.intitule = intitule;
+    }
+    
     public void setId_produit(int id_produit) {
         this.id_produit = id_produit;
     }
@@ -64,6 +83,13 @@ public class ViewPrixProduit {
 
     public void setPrixdevente(double prixdevente) {
         this.prixdevente = prixdevente;
+    }
+     public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
     }
     
     public ViewPrixProduit(){
@@ -149,6 +175,28 @@ public class ViewPrixProduit {
        ViewPrixProduit[] prixDeRevient=getPrixDeRevient();
        ViewPrixProduit[] prix=getPrixParView(prixDeRevient);
        return prix;
+    }
+    
+     public ViewPrixProduit[] getProduitPrixType()throws Exception
+    {
+    	Connecty connecty=new Connecty();
+    	Connection c= connecty.getConnex();
+    	String requete="select * from view_produitPrixType";
+    	Statement Stat = c.createStatement();
+    	ResultSet res= Stat.executeQuery(requete);
+    	Vector vecteur=new Vector(); 
+    	while(res.next())
+    	{
+    		ViewPrixProduit cat= new ViewPrixProduit(res.getString(1),res.getString(2),res.getInt(3));
+    		vecteur.add(cat);
+    	}
+    	ViewPrixProduit[] vao=new ViewPrixProduit[vecteur.size()];
+    	for (int i=0;i<vecteur.size();i++)
+    	{
+    		vao[i]=(ViewPrixProduit)vecteur.elementAt(i);
+    	}
+        c.close();
+    	return vao;
     }
     
 }
