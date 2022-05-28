@@ -44,7 +44,7 @@ public class ListePrixReviens extends HttpServlet {
 //                }
                 request.setAttribute("listePrix",liste);
                 //request.setAttribute("listeVente",liste);
-                request.getRequestDispatcher("/listePrixProduit.jsp").forward(request, response);
+                request.getRequestDispatcher("/TemplateAdmin.jsp?p=listePrixProduit").forward(request, response);
             }catch (Exception ex) {
             Logger.getLogger(ListePrixReviens.class.getName()).log(Level.SEVERE, null, ex);
             

@@ -252,8 +252,7 @@
                             <li class="open active"><a href="#"><i class="zmdi zmdi-home"></i></a></li>
                             <li><a href="Stock">Stock</a></li>
                             <li><a href="ListeServeur">Pourboire</a></li>
-                            <li><a href="#">Nouveau profil</a></li>
-                            <li><a href="#">Liste des plats</a></li>
+                            <li><a href="ListePrixReviens">Liste Plats et prix</a></li>
                         </ul>
                     </div>
                 </div>

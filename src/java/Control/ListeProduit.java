@@ -39,7 +39,8 @@ public class ListeProduit extends HttpServlet {
         try (PrintWriter out = response.getWriter())
             {   
                 ServiceProduit sp=new ServiceProduit();
-                Produit[] liste=sp.findAllProduit();
+                Produit[] liste=sp.findAllProduit();   
+                System.out.println("taille liste "+liste.length);
                 request.setAttribute("listeProd",liste);
                 request.getRequestDispatcher("/Commande.jsp").forward(request, response);
             }catch (Exception ex) {
