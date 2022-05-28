@@ -8,99 +8,57 @@
 <%@page import="classes.*"%>
 <%@page import="Control.*"%>
 <%
-        Serveur[] serveur=(Serveur[])request.getAttribute("Serve");
-         Produit[] pr=(Produit[])request.getAttribute("Serve");
+    Serveur[] serveur = (Serveur[]) request.getAttribute("Serve");
+    Produit[] pr = (Produit[]) request.getAttribute("Serve");
 %>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <title>Restaurant</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    label{
-        font-family:"Segoe UI";
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
-</head>
-<body>
- <%@page import="classes.*"%>
-    <%@page import="Service.*"%>
-    
-    <% 
-        
-        ViewPourBoire[] liste=(ViewPourBoire[])request.getAttribute("liste");
-    %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Pourboire Serveur</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-  </div>
-</nav>
-  
-<div class="container-fluid ">    
-  <div class="row">
-    <div class="col-md-2"> </div>
-    <div class="col-md-8"> 
-        <div class="card">
-            <div class="card-body">
-          
-              <%
-            for(int i=0;i<liste.length;i++){
-        %>
-            <div class="card-body">
-                <label><strong>Nom Serveur:</strong><% out.print(liste[i].getNom());%></label><br>
-                <label><strong>Total Prix des Commandes :</strong>  <% out.print(liste[i].getPrixvente());%></label><br>
-                <label><strong>Pourboire du Serveur :</strong>  <% out.print(liste[i].getPourboire());%></label>
-            </div>
-            <%}%>
-            
-        </div>
-            </div>
-        </div>
-        <br>
-        <br>
-     
-    <div class="col-md-2 ">    </div>
-  </div>
-</div>
 
-</body>
-</html>
+<%@page import="classes.*"%>
+<%@page import="Service.*"%>
+
+<%
+    ViewPourBoire[] liste = (ViewPourBoire[]) request.getAttribute("liste");
+    Serveur srv = (Serveur) request.getAttribute("serveur");
+%>              
+<div class="block-header">
+    <div class="row clearfix">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <h2>Pourboire</h2>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12">
+            <ul class="breadcrumb float-md-right padding-0">
+                <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i></a></li>
+                <li class="breadcrumb-item active">Pourboire</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="card">
+        <div class="header">
+            <h2> Liste Pourboire de<strong> <%= srv.getNom()%> </strong> </h2>
+        </div>
+        <div class="body table-responsive">
+            <table class="table m-b-0 table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Date </th>
+                        <th scope="col">Pourboire</th>
+                        <th scope="col">Total prix de vente </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (int i = 0; i < liste.length; i++) {%>
+                    <tr>
+                        <td><%= liste[i].getDatecommande() %></td>
+                        <td><%= liste[i].getPourboire()%> Ar </td>
+                        <td><%= liste[i].getPrixvente() %> Ar </td>
+                    </tr>
+                    <%  }%>
+                    <% if(liste.length==0){ %>
+                        <td>Pas de pourboire a cette date </td>
+                    <% }%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

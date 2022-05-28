@@ -1,18 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package Control;
 
-import Service.ServiceProduit;
-import Service.ServiceServeur;
-import classes.Produit;
-import classes.Serveur;
+import classes.ViewStock;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author jeant
+ * @author ASUS TUF
  */
-public class ListeServeur extends HttpServlet {
+public class Stock extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,15 +32,16 @@ public class ListeServeur extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            
-            ServiceServeur sp=new ServiceServeur();
-                Serveur[] liste=sp.findAllServeur();
-                request.setAttribute("Serve",liste);
-                request.getRequestDispatcher("/TemplateAdmin.jsp?p=ChoixServeur").forward(request, response);
-            }catch (Exception ex) {
-            Logger.getLogger(ListeServeur.class.getName()).log(Level.SEVERE, null, ex);
-            
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Stock</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Stock at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -61,7 +57,17 @@ public class ListeServeur extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        try {
+            System.out.println("hello");
+            ViewStock vs = new ViewStock();
+            ViewStock[] listeStock = vs.getStock();
+            request.setAttribute("listeStock", listeStock);
+            RequestDispatcher dispat = request.getRequestDispatcher("/TemplateAdmin.jsp?p=Stock");
+            dispat.forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -75,7 +81,8 @@ public class ListeServeur extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+
     }
 
     /**

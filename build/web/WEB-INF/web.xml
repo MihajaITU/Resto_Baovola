@@ -56,6 +56,10 @@
         <servlet-name>ListeNonPaye</servlet-name>
         <servlet-class>Control.ListeNonPaye</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Stock</servlet-name>
+        <servlet-class>Control.Stock</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListeProduit</servlet-name>
         <url-pattern>/ListeProduit</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>ListeNonPaye</servlet-name>
         <url-pattern>/ListeNonPaye</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Stock</servlet-name>
+        <url-pattern>/Stock</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

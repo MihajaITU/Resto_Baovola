@@ -23,7 +23,7 @@ public class Connecty {
         try {
             Class.forName("org.postgresql.Driver");
             connect = DriverManager.getConnection("jdbc:postgresql://localhost:5432/resto", "postgres", "admin");
-            System.out.println("connection = "+connect);
+//            System.out.println("connection = "+connect);
             return connect ;
         }
         catch (SQLException limit){

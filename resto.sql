@@ -355,8 +355,6 @@ alter table detailsCommande add column estLivrere boolean;
     insert into detailscommande values (nextval('detailsCommande_sq'),6,5,3,10000,true);
     insert into detailscommande values (nextval('detailsCommande_sq'),6,5,3,10000,true);
 
-
-
 create table stock(
     id int,
     idIngredient int,
@@ -388,7 +386,11 @@ insert into stock values (nextval('stock_sq'),4,null,10000,'2022-03-26');
 insert into stock values (nextval('stock_sq'),5,null,10000,'2022-03-26');
 
 -- stock restante ajd
-select idingredient, sum(entree)-sum(sortie) as IngredientRestante,now()  from stock group by idingredient
+create or replace view view_stock as 
+select i.designation, sum(entree)-sum(sortie) as IngredientRestante,now()  
+    from stock s
+    join ingredient i on s.idingredient=i.id
+    group by idingredient,i.designation
 
 --stock restante par jour 
 select idingredient, sum(entree)-sum(sortie) as IngredientRestante,dateStock  from stock group by idingredient,dateStock
@@ -477,3 +479,4 @@ select designation,sum(valeur ) as total from viewtotal_paiementByType
         group by t.id,c.dateCommande,c.id
 	
     --idtable , total , date
+    
