@@ -15,13 +15,13 @@ import java.util.Vector;
  * @author jeant
  */
 public class ViewCuisine {
-    
-     int idCuisine;
+
+    int idCuisine;
     int id_DetailCommande;
     String marquage;
     String designation;
     String intitule;
-    int id_Produit,id_Serveur;
+    int id_Produit, id_Serveur;
     float prixVente;
 
     public int getId_DetailCommande() {
@@ -71,8 +71,6 @@ public class ViewCuisine {
     public void setPrixVente(float prixVente) {
         this.prixVente = prixVente;
     }
-    
-    
 
     public ViewCuisine(String marquage, String designation, String intitule, int id_Produit, int id_Serveur) {
         this.marquage = marquage;
@@ -81,9 +79,9 @@ public class ViewCuisine {
         this.id_Produit = id_Produit;
         this.id_Serveur = id_Serveur;
     }
-    
-    
-    public ViewCuisine(){}
+
+    public ViewCuisine() {
+    }
 
     public int getIdCuisine() {
         return idCuisine;
@@ -114,70 +112,61 @@ public class ViewCuisine {
         this.id_DetailCommande = id_DetailCommande;
         this.marquage = marquage;
     }
-    
-     public ViewCuisine[] getAllFromCuisine()throws Exception
-    {
-    	Connecty connecty=new Connecty();
-    	Connection c= connecty.getConnex();
-    	String requete=" select * from view_cuisine";
-    	Statement Stat = c.createStatement();
-    	ResultSet res= Stat.executeQuery(requete);
-    	Vector vecteur=new Vector(); 
-    	while(res.next())
-    	{
-    		ViewCuisine cat= new ViewCuisine(res.getString(1),res.getString(2),res.getString(3),res.getInt(4),res.getInt(5));
-    		vecteur.add(cat);
-    	}
-    	ViewCuisine[] vao=new ViewCuisine[vecteur.size()];
-    	for (int i=0;i<vecteur.size();i++)
-    	{
-    		vao[i]=(ViewCuisine)vecteur.elementAt(i);
-    	}
+
+    public ViewCuisine[] getAllFromCuisine() throws Exception {
+        Connecty connecty = new Connecty();
+        Connection c = connecty.getConnex();
+        String requete = " select * from view_cuisine";
+        Statement Stat = c.createStatement();
+        ResultSet res = Stat.executeQuery(requete);
+        Vector vecteur = new Vector();
+        while (res.next()) {
+            ViewCuisine cat = new ViewCuisine(res.getString(1), res.getString(2), res.getString(3), res.getInt(4), res.getInt(5));
+            vecteur.add(cat);
+        }
+        ViewCuisine[] vao = new ViewCuisine[vecteur.size()];
+        for (int i = 0; i < vecteur.size(); i++) {
+            vao[i] = (ViewCuisine) vecteur.elementAt(i);
+        }
         c.close();
-    	return vao;
+        return vao;
     }
-     
-     public ViewCuisine[] getAllCuisineCuit ()throws Exception
-    {
-    	Connecty connecty=new Connecty();
-    	Connection c= connecty.getConnex();
-    	String requete=" select * from view_cuisine where marquage='Cuit'";
-    	Statement Stat = c.createStatement();
-    	ResultSet res= Stat.executeQuery(requete);
-    	Vector vecteur=new Vector(); 
-    	while(res.next())
-    	{
-    		ViewCuisine cat= new ViewCuisine(res.getString(1),res.getString(2),res.getString(3),res.getInt(4),res.getInt(5));
-    		vecteur.add(cat);
-    	}
-    	ViewCuisine[] vao=new ViewCuisine[vecteur.size()];
-    	for (int i=0;i<vecteur.size();i++)
-    	{
-    		vao[i]=(ViewCuisine)vecteur.elementAt(i);
-    	}
+
+    public ViewCuisine[] getAllCuisineCuit() throws Exception {
+        Connecty connecty = new Connecty();
+        Connection c = connecty.getConnex();
+        String requete = " select * from view_cuisine where marquage='Cuit'";
+        Statement Stat = c.createStatement();
+        ResultSet res = Stat.executeQuery(requete);
+        Vector vecteur = new Vector();
+        while (res.next()) {
+            ViewCuisine cat = new ViewCuisine(res.getString(1), res.getString(2), res.getString(3), res.getInt(4), res.getInt(5));
+            vecteur.add(cat);
+        }
+        ViewCuisine[] vao = new ViewCuisine[vecteur.size()];
+        for (int i = 0; i < vecteur.size(); i++) {
+            vao[i] = (ViewCuisine) vecteur.elementAt(i);
+        }
         c.close();
-    	return vao;
+        return vao;
     }
-     
-     public ViewCuisine[] getPlatPrepare ()throws Exception
-    {
-    	Connecty connecty=new Connecty();
-    	Connection c= connecty.getConnex();
-    	String requete=" select * from view_cuisine where marquage='En cours'";
-    	Statement Stat = c.createStatement();
-    	ResultSet res= Stat.executeQuery(requete);
-    	Vector vecteur=new Vector(); 
-    	while(res.next())
-    	{
-    		ViewCuisine cat= new ViewCuisine(res.getString(1),res.getString(2),res.getString(3),res.getInt(4),res.getInt(5));
-    		vecteur.add(cat);
-    	}
-    	ViewCuisine[] vao=new ViewCuisine[vecteur.size()];
-    	for (int i=0;i<vecteur.size();i++)
-    	{
-    		vao[i]=(ViewCuisine)vecteur.elementAt(i);
-    	}
+
+    public ViewCuisine[] getPlatPrepare() throws Exception {
+        Connecty connecty = new Connecty();
+        Connection c = connecty.getConnex();
+        String requete = " select * from view_cuisine where marquage='En cours'";
+        Statement Stat = c.createStatement();
+        ResultSet res = Stat.executeQuery(requete);
+        Vector vecteur = new Vector();
+        while (res.next()) {
+            ViewCuisine cat = new ViewCuisine(res.getString(1), res.getString(2), res.getString(3), res.getInt(4), res.getInt(5));
+            vecteur.add(cat);
+        }
+        ViewCuisine[] vao = new ViewCuisine[vecteur.size()];
+        for (int i = 0; i < vecteur.size(); i++) {
+            vao[i] = (ViewCuisine) vecteur.elementAt(i);
+        }
         c.close();
-    	return vao;
+        return vao;
     }
 }

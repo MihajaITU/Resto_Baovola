@@ -48,16 +48,16 @@ public class LoginServeur extends HttpServlet {
 //                out.print(request.getParameter("mail"));
 //                out.print(request.getParameter("mdp"));
 //                out.print(livreur.getId());
-//            boolean valeur = sa.ServeurLogin(request.getParameter("mail"), request.getParameter("mdp"));
+            boolean valeur = sa.ServeurLogin(request.getParameter("mail"), request.getParameter("mdp"));
             HttpSession session = request.getSession();
-//            if (valeur == true) {
+            if (valeur == true) {
                 session.setAttribute("idServeur", serveur.getId());
                 Serveur[] liste = sp.findSpeServeur(serveur.getId());
                 request.setAttribute("Commande", liste);
                 request.getRequestDispatcher("/TemplateServeur.jsp?p=GestionCommande").forward(request, response);
-//            } else {
-//                request.getRequestDispatcher("/LoginServeur.jsp").forward(request, response);
-//            }
+            } else {
+                request.getRequestDispatcher("/LoginServeur.jsp").forward(request, response);
+            }
         } catch (Exception ex) {
             Logger.getLogger(LoginServeur.class.getName()).log(Level.SEVERE, null, ex);
         }

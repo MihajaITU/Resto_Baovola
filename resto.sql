@@ -128,7 +128,7 @@ insert into cuisine values (nextval('cuisine_sq'),4,'Cuit');
 insert into cuisine values (nextval('cuisine_sq'),5,'Cuit');
 
 -- view cuisine plat cuit
-create view view_cuisine as 
+create   view view_cuisine as 
  select p.designation as produit ,t.designation as type, dc.id_Produit, dc.id_Serveur, c.marquage 
  from detailsCommande dc
  join cuisine c on c.id_DetailCommande=dc.id_produit

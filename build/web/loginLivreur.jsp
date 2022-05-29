@@ -51,11 +51,11 @@
                 <div class="container">
 
                     <div class="section-title">
-                        <h2>Connexion <span>Cuisine</span></h2>
+                        <h2>Connexion <span>Livreur</span></h2>
                         <p>Connectez-vous dès maintenant.</p>
                     </div>
 
-                    <form action="LoginCuisine" method="post">
+                    <form action="LoginLivreur" method="post">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 form-group">
 
