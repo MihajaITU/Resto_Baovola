@@ -100,6 +100,7 @@
         <servlet-name>LoginAdmin</servlet-name>
         <servlet-class>Control.LoginAdmin</servlet-class>
     </servlet>
+    <servlet>
         <servlet-name>LogOutCuisine</servlet-name>
         <servlet-class>Control.LogOutCuisine</servlet-class>
     </servlet>
@@ -107,11 +108,6 @@
         <servlet-name>LogOutServeur</servlet-name>
         <servlet-class>Control.LogOutServeur</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>LoginServeur</servlet-name>
-        <servlet-class>Control.LoginServeur</servlet-class>
-    </servlet>
-    
     <servlet-mapping>
         <servlet-name>ListeProduit</servlet-name>
         <url-pattern>/ListeProduit</url-pattern>
@@ -203,10 +199,6 @@
      <servlet-mapping>
         <servlet-name>LoginCuisine</servlet-name>
         <url-pattern>/LoginCuisine</url-pattern>
-    </servlet-mapping>
-     <servlet-mapping>
-        <servlet-name>LoginServeur</servlet-name>
-        <url-pattern>/LoginServeur</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogOutCuisine</servlet-name>
