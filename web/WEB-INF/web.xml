@@ -25,6 +25,26 @@
         <servlet-class>Control.PlatALivraison</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>PlatCuit</servlet-name>
+        <servlet-class>Control.PlatCuit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PlatDispo</servlet-name>
+        <servlet-class>Control.PlatDispo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PlatNonLivree</servlet-name>
+        <servlet-class>Control.PlatNonLivree</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PlatPrepare</servlet-name>
+        <servlet-class>Control.PlatPrepare</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GestionCommande</servlet-name>
+        <servlet-class>Control.GestionCommande</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>TypeProduit</servlet-name>
         <servlet-class>Control.TypeProduit</servlet-class>
     </servlet>
@@ -38,7 +58,7 @@
     </servlet>
     <servlet>
         <servlet-name>insertCommande</servlet-name>
-        <servlet-class>Control.insertCommande</servlet-class>
+        <servlet-class>Control.GestionCommande</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListePourBoire</servlet-name>
@@ -69,6 +89,10 @@
         <servlet-class>Control.LoginLivreur</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>LoginCuisine</servlet-name>
+        <servlet-class>Control.LoginCuisine</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>LogOutLivreur</servlet-name>
         <servlet-class>Control.LogOutLivreur</servlet-class>
     </servlet>
@@ -76,6 +100,18 @@
         <servlet-name>LoginAdmin</servlet-name>
         <servlet-class>Control.LoginAdmin</servlet-class>
     </servlet>
+        <servlet-name>LogOutCuisine</servlet-name>
+        <servlet-class>Control.LogOutCuisine</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogOutServeur</servlet-name>
+        <servlet-class>Control.LogOutServeur</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServeur</servlet-name>
+        <servlet-class>Control.LoginServeur</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
         <servlet-name>ListeProduit</servlet-name>
         <url-pattern>/ListeProduit</url-pattern>
@@ -141,8 +177,44 @@
         <url-pattern>/PlatALivraison</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>GestionCommande</servlet-name>
+        <url-pattern>/GestionCommande</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>PlatPrepare</servlet-name>
+        <url-pattern>/PlatPrepare</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>PlatCuit</servlet-name>
+        <url-pattern>/PlatCuit</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>PlatDispo</servlet-name>
+        <url-pattern>/PlatDispo</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>PlatNonLivree</servlet-name>
+        <url-pattern>/PlatNonLivree</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>LoginLivreur</servlet-name>
         <url-pattern>/LoginLivreur</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>LoginCuisine</servlet-name>
+        <url-pattern>/LoginCuisine</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>LoginServeur</servlet-name>
+        <url-pattern>/LoginServeur</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOutCuisine</servlet-name>
+        <url-pattern>/LogOutCuisine</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOutServeur</servlet-name>
+        <url-pattern>/LogOutServeur</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogOutLivreur</servlet-name>

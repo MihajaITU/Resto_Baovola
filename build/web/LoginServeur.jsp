@@ -1,97 +1,99 @@
 <%-- 
-Document   : LogoutAdmin
-Created on : 21 mars 2022, 17:49:28
-Author     : jeant
+    Document   : loginLivreur
+    Created on : 27 mai 2022, 19:59:26
+    Author     : ASUS TUF
+--%>
+
+<%-- 
+    Document   : acceuil
+    Created on : 24 mai 2022, 10:07:52
+    Author     : jeant
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="classes.*"%>
 <%@page import="Control.*"%>
+<%@page import="Service.*"%>
 
 <!DOCTYPE html>
 <html lang="fr">
+
     <head>
-        <title>Restaurant</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <style>
-            /* Remove the navbar's default margin-bottom and rounded borders */
-            .navbar {
-                margin-bottom: 0;
-                border-radius: 0;
-            }
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-            /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-            .row.content {
-                height: 450px
-            }
+        <title>Resto Gasy - Connexion</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
 
-            /* Set gray background color and 100% height */
-            .sidenav {
-                padding-top: 20px;
-                background-color: #f1f1f1;
-                height: 100%;
-            }
+        <!-- Favicons -->
+        <link href="assets/img/favicon.png" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-            /* Set black background color, white text and some padding */
-            footer {
-                background-color: #555;
-                color: white;
-                padding: 15px;
-            }
+        <!-- Google Fonts -->
+        <link href="css/google.css" rel="stylesheet">
 
-            label{
-                font-family:"Segoe UI";
-            }
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-            /* On small screens, set height to 'auto' for sidenav and grid */
-            @media screen and (max-width: 767px) {
-                .sidenav {
-                    height: auto;
-                    padding: 15px;
-                }
-                .row.content {
-                    height:auto;
-                }
-            }
-        </style>
+        <!-- Template Main CSS File -->
+        <link href="assets/css/style.css" rel="stylesheet">
     </head>
     <body>
+        <!-- ======= Hero Section ======= -->
+        <main id="main">
+            <section id="book-a-table" class="book-a-table">
+                <div class="container">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Login Serveur</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            </div>
-        </nav>
-
-        <div class="container-fluid ">    
-            <div class="row">
-                <div class="col-md-3"> </div>
-                <div class="col-md-5"> 
-                    <div class="card">
-                        <div class="card-body">
-
-                            <form action="/LoginServer" method="get" class="serveur">
-                                <center>
-                                    <h2><strong>Login Serveur</strong></h2>
-                                    <label style="font-family:Segoe UI;">Entrer votre Login : </label>
-                                    <input type="text" name="login" placeholder="Login...">
-                                    <br>
-                                    <label > Entrer votre mot de passe :</label> <input type="password" name="mdp" placeholder="mot de passe.."><br>
-                                    <br></center>
-                                <center><input type="submit" class="btn btn-success" value="Connexion" ></center>
-                            </form>
-                        </div>
+                    <div class="section-title">
+                        <h2>Connexion <span>Serveur</span></h2>
+                        <p>Connectez-vous dès maintenant.</p>
                     </div>
-                    <br>
+
+                    <form action="LoginServeur" method="post">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 form-group">
+
+                            </div>
+                            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                                <input type="text" class="form-control" name="mail" id="email" placeholder="Mail" >
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 form-group">
+
+                            </div>
+                            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                                <input type="password" class="form-control" name="mdp" id="email" placeholder="Mot de passe" >
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="text-center"><input class="btn btn-warning" type="submit" value="Se Connecter"></div>
+                    </form>
+
                 </div>
-                <div class="col-md-3">    </div>
-            </div>
-        </div>
+            </section><!-- End Book A Table Section -->
+
+            <!-- ======= Gallery Section ======= -->
+
+        </main><!-- End #main -->
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+    </body>
+
 </html>

@@ -31,7 +31,7 @@
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+        <link href="css/google.css" rel="stylesheet">
 
         <!-- Vendor CSS Files -->
         <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -82,8 +82,8 @@
                                     <h2 class="animate__animated animate__fadeInDown"><span>Resto </span>Gasy</h2>
                                     <p class="animate__animated animate__fadeInUp">Veuillez choisir votre profil : </p>
                                     <div>
-                                        <a href="#" class="btn-menu animate__animated animate__fadeInUp scrollto">Serveur</a>
-                                        <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Cuisine</a>
+                                        <a href="LoginServeur.jsp" class="btn-menu animate__animated animate__fadeInUp scrollto">Serveur</a>
+                                        <a href="loginCuisine.jsp" class="btn-book animate__animated animate__fadeInUp scrollto">Cuisine</a>
                                         <a href="loginLivreur.jsp" class="btn-menu animate__animated animate__fadeInUp scrollto">Livreur </a>
                                         <a href="loginCaisse.jsp" class="btn-book animate__animated animate__fadeInUp scrollto">Caisse</a>
                                     </div>

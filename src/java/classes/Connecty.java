@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author HASINA
  */
 public class Connecty {
-     private final static String URL = "jdbc:postgresql://localhost/resto" ;
+     private final static String URL = "jdbc:postgresql://localhost/restau" ;
     private final static String USER = "postgres" ;
     private final static String PASSWORD = "admin" ;
     public Connection getConnex() throws ClassNotFoundException {
@@ -22,6 +22,8 @@ public class Connecty {
         try {
             Class.forName("org.postgresql.Driver");
             connect = DriverManager.getConnection(URL, USER, PASSWORD);
+            connect = DriverManager.getConnection("jdbc:postgresql://localhost:5432/restau", "postgres", "0000");
+//            System.out.println("connection = "+connect);
             return connect ;
         }
         catch (SQLException limit){

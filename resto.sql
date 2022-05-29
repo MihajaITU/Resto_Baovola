@@ -84,8 +84,77 @@ create table prixProduit(
 create table Serveur(
     id int,
     nom varchar(50),
+    mail varchar(100),
+    mdp varchar(100),
     primary key(id)
 );
+
+create sequence serveur_sq start with 1 increment by 1 ;
+
+insert into Serveur values (nextval('serveur_sq'),'Rija','rija@gmail.com','rija0000');
+insert into Serveur values (nextval('serveur_sq'),'Lala','lala@gmail.com','lala0000');
+insert into Serveur values (nextval('serveur_sq'),'mika','mika@gmail.com','mika0000');
+
+ALTER TABLE Serveur 
+ ADD mail varchar(100),
+  ADD  mdp varchar(100);
+
+create table LogCuisine(
+      id int,
+    nom varchar(50),
+    mail varchar(100),
+    mdp varchar(100),
+    primary key(id)
+);
+
+create sequence logcuisine_sq start with 1 increment by 1;
+
+insert into LogCuisine values (nextval('logcuisine_sq'),'Rija','rija@gmail.com','rija0000');
+insert into LogCuisine values (nextval('logcuisine_sq'),'Lala','lala@gmail.com','lala0000');
+
+
+  create TABLE cuisine(
+    idCuisine int,
+    id_DetailCommande int,
+    marquage varchar(20),
+    primary key(idCuisine),
+    foreign key (id_DetailCommande) references DetailsCommande(id)
+);
+create sequence cuisine_sq start with 1 increment by 1;
+
+insert into cuisine values (nextval('cuisine_sq'),3,'Cuit');
+insert into cuisine values (nextval('cuisine_sq'),2,'En cours');
+insert into cuisine values (nextval('cuisine_sq'),4,'Cuit');
+insert into cuisine values (nextval('cuisine_sq'),5,'Cuit');
+
+-- view cuisine plat cuit
+create view view_cuisine as 
+ select p.designation as produit ,t.designation as type, dc.id_Produit, dc.id_Serveur, c.marquage 
+ from detailsCommande dc
+ join cuisine c on c.id_DetailCommande=dc.id_produit
+ join produit p on p.id =dc.id_produit
+ join type_produit t on t.id =dc.id_Produit
+
+ select * from view_cuisine where marquage='Cuit';
+
+
+-- view produit + prix+ type
+ create view view_produitPrixType as
+select p.designation as nomProduit ,pt.designation as type, pp.prix
+from prixproduit pp
+join Produit p on p.id=pp.id_Produit
+join type_produit pt on pt.id = p.id_type_produit;
+
+-- plat cuit cuisine avec serveurs;
+ create view view_produitAvecServeur as
+select p.designation as produit ,t.designation as type,s.nom, dc.id_Produit, c.marquage 
+ from detailsCommande dc
+ join cuisine c on c.id_DetailCommande=dc.id_produit
+ join produit p on p.id =dc.id_produit
+ join type_produit t on t.id =dc.id_Produit  
+ join Serveur s on s.id=dc.id_Serveur
+
+
 
 create table commande(
     id int,
@@ -542,13 +611,3 @@ select designation,sum(valeur ) as total from viewtotal_paiementByType
 	
     --idtable , total , date
     
-
-    create table admin (
-        id int,
-    nom varchar(50),
-    mail varchar(100),
-    mdp varchar(100),
-    primary key(id)
-    )
-
-    create sequence admin_sq start with 1 increment by 1 ;

@@ -64,6 +64,16 @@ public class Commande {
        c.close();
     }
     
+    public void insertCommandeWDate(int idt, String d)throws Exception
+    {
+       Connecty connecty=new Connecty();
+       Connection c= connecty.getConnex();
+       String req="insert into commande values(null,'"+idt+"','"+d+"')";
+       Statement Stat = c.createStatement();
+       ResultSet res= Stat.executeQuery(req); 
+       c.close();
+    }
+    
      public int getIdCommande()throws Exception
     {
         int retour=0;

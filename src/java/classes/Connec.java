@@ -19,8 +19,8 @@ public class Connec {
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/resto",
-                            "postgres", "admin");
+                    .getConnection("jdbc:postgresql://localhost:5432/restau",
+                            "postgres", "0000");
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

@@ -5,25 +5,29 @@
  */
 package Control;
 
-import Service.ServicePourBoire;
-import classes.Serveur;
-import classes.Type_Produit;
-import classes.ViewPourBoire;
+import Service.ServiceLivreur;
+import Service.ServiceViewPlatALivre;
+import classes.Livreur;
+import classes.ViewPlatALivre;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author HASINA
  */
-public class ListePourBoire extends HttpServlet {
+public class LogOutCuisine extends HttpServlet {
 
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -36,30 +40,21 @@ public class ListePourBoire extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            ServicePourBoire sp = new ServicePourBoire();
-
-            String serve = request.getParameter("serveur");
-            String date1 = request.getParameter("date1");
-            String date2 = request.getParameter("date2");
-
-            //Serveur id=new Type_Produit();
-            int idServeur = Integer.parseInt(serve);
-            ViewPourBoire[] pb = sp.findPourBoire(idServeur, date1, date2);
-            Serveur srv= new Serveur();
-            Serveur serveur = srv.getIddServeur(serve);
-            request.setAttribute("liste", pb);
-            request.setAttribute("serveur", serveur);
-
-            request.getRequestDispatcher("/TemplateAdmin.jsp?p=pourboire").forward(request, response);
-        } catch (Exception ex) {
-            Logger.getLogger(TypeProduit.class.getName()).log(Level.SEVERE, null, ex);
-
+       try (PrintWriter out = response.getWriter()) 
+            {
+               HttpSession sessionCuisine=request.getSession();
+               ServletContext context = this.getServletContext();
+               String messageErreur="Deconnexion Cuisinier";
+              request.setAttribute("messageErreur",messageErreur);
+               sessionCuisine.invalidate();
+               RequestDispatcher dispat=context.getRequestDispatcher("/Accueil.jsp");
+               dispat.forward(request,response);
+            }catch (Exception ex) {
+            Logger.getLogger(LogOutCuisine.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
+    
     /**
      * Returns a short description of the servlet.
      *
