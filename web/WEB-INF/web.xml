@@ -58,7 +58,7 @@
     </servlet>
     <servlet>
         <servlet-name>insertCommande</servlet-name>
-        <servlet-class>Control.GestionCommande</servlet-class>
+        <servlet-class>Control.insertCommande</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListePourBoire</servlet-name>
