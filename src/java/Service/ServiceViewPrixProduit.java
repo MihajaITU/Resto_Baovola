@@ -37,4 +37,10 @@ public class ServiceViewPrixProduit {
         ViewPrixProduit produit=new ViewPrixProduit();
         return produit.getAllPrixVente();
     }
+      
+      public ViewPrixProduit[] produitDetail() throws Exception
+    {
+        ViewPrixProduit produit=new ViewPrixProduit();
+        return produit.getProduitPrixType();
+    }
 }

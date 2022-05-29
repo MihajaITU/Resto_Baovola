@@ -48,7 +48,7 @@ public class ListePourBoire extends HttpServlet {
             int idServeur = Integer.parseInt(serve);
             ViewPourBoire[] pb = sp.findPourBoire(idServeur, date1, date2);
             Serveur srv= new Serveur();
-            Serveur serveur = srv.getServeur(idServeur);
+            Serveur serveur = srv.getIddServeur(serve);
             request.setAttribute("liste", pb);
             request.setAttribute("serveur", serveur);
 

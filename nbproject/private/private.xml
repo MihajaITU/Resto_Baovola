@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< Updated upstream
         <group/>
+=======
+        <group>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/AccueilClient.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/LogoutAdmin.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/AccueilAdmin.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/FicheRecette.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/NonPayer.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/TemplateAdmin.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/src/java/classes/Connecty.java</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/Livraison.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/listeVaika.jsp</file>
+            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/src/java/classes/Connec.java</file>
+        </group>
+>>>>>>> Stashed changes
     </open-files>
 </project-private>

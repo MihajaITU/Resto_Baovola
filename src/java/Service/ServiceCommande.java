@@ -20,6 +20,11 @@ public class ServiceCommande {
         Commande pan=new Commande();
         pan.insertCommande(idt);
     }
+     public void insertCommandeWDate(int idt, String d) throws Exception
+    {
+        Commande pan=new Commande();
+        pan.insertCommandeWDate(idt, d);
+    }
      public int findIdCommande() throws Exception
     {
         Commande pan=new Commande();
