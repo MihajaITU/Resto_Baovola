@@ -100,6 +100,7 @@
         <servlet-name>LoginAdmin</servlet-name>
         <servlet-class>Control.LoginAdmin</servlet-class>
     </servlet>
+    <servlet>
         <servlet-name>LogOutCuisine</servlet-name>
         <servlet-class>Control.LogOutCuisine</servlet-class>
     </servlet>

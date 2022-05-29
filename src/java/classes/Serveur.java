@@ -16,12 +16,11 @@ import java.util.Vector;
  */
 public class Serveur {
 
-    
     int id;
     String nom;
     String mail;
     String mdp;
-    
+
     public Serveur(int id, String nom, String mail, String mdp) {
         this.id = id;
         this.nom = nom;
@@ -29,8 +28,6 @@ public class Serveur {
         this.mdp = mdp;
     }
 
-    
-    
     public String getMail() {
         return mail;
     }
@@ -46,7 +43,6 @@ public class Serveur {
     public void setMdp(String mdp) {
         this.mdp = mdp;
     }
-    
 
     public Serveur() {
 
@@ -91,7 +87,7 @@ public class Serveur {
         c.close();
         return vao;
     }
-    
+
     public Serveur[] getSpeServeur(int d) throws Exception {
         Connecty connecty = new Connecty();
         Connection c = connecty.getConnex();
@@ -125,68 +121,63 @@ public class Serveur {
         c.close();
         return retour;
     }
- public boolean loginServeur(String n,String m)throws Exception
-    {
-        Serveur[] tab= getAllServeur();
-        for(Serveur tabl : tab)
-        {
-            if(tabl.getMail().equalsIgnoreCase(n) && tabl.getMdp().equalsIgnoreCase(m))
-            {
+
+    public boolean loginServeur(String n, String m) throws Exception {
+        Serveur[] tab = getAllServeur();
+        System.out.println(tab.length);
+        for (Serveur tabl : tab) {
+            System.out.println(tabl.getNom());
+            if (tabl.getMail().equalsIgnoreCase(n) && tabl.getMdp().equalsIgnoreCase(m)) {
                 return true;
             }
         }
-        
+
         return false;
     }
-    public Serveur getServeur(String n,String m)throws Exception
-    {
-    	Connecty connecty=new Connecty();
-    	Connection c= connecty.getConnex();
-        Serveur bat= new Serveur();
-    	String requete="select * from Serveur where mail='"+n+"' and mdp='"+m+"'";
-    	Statement Stat = c.createStatement();
-    	ResultSet res= Stat.executeQuery(requete);
-    	while(res.next())
-    	{
-            bat= new Serveur(res.getInt(1),res.getString(2),res.getString(3),res.getString(4));
-    	}
+
+    public Serveur getServeur(String n, String m) throws Exception {
+        Connecty connecty = new Connecty();
+        Connection c = connecty.getConnex();
+        Serveur bat = new Serveur();
+        String requete = "select * from Serveur where mail='" + n + "' and mdp='" + m + "'";
+        Statement Stat = c.createStatement();
+        ResultSet res = Stat.executeQuery(requete);
+        while (res.next()) {
+            bat = new Serveur(res.getInt(1), res.getString(2), res.getString(3), res.getString(4));
+        }
         c.close();
-    	return bat;
+        return bat;
     }
-    
-    public Serveur getOneServeur(String n)throws Exception
-    {
-    	Connecty connecty=new Connecty();
-    	Connection c= connecty.getConnex();
-        Serveur bat= new Serveur();
-    	String requete="select * from Serveur where nom='"+n+"'";
-    	Statement Stat = c.createStatement();
-    	ResultSet res= Stat.executeQuery(requete);
-    	while(res.next())
-    	{
-            bat= new Serveur(res.getInt(1),res.getString(2),res.getString(3),res.getString(4));
-    	}
+
+    public Serveur getOneServeur(String n) throws Exception {
+        Connecty connecty = new Connecty();
+        Connection c = connecty.getConnex();
+        Serveur bat = new Serveur();
+        String requete = "select * from Serveur where nom='" + n + "'";
+        Statement Stat = c.createStatement();
+        ResultSet res = Stat.executeQuery(requete);
+        while (res.next()) {
+            bat = new Serveur(res.getInt(1), res.getString(2), res.getString(3), res.getString(4));
+        }
         c.close();
-    	return bat;
+        return bat;
     }
-    
-     public Serveur getIddServeur(String m)throws Exception
-    {
-    	Connecty connecty=new Connecty();
-    	Connection c= connecty.getConnex();
-        Serveur bat= new Serveur();
-    	String requete="select id from Serveur where mail='"+m+"'";
-    	Statement Stat = c.createStatement();
-    	ResultSet res= Stat.executeQuery(requete);
-    	while(res.next())
-    	{
-            bat= new Serveur(res.getInt(1),res.getString(2),res.getString(3),res.getString(4));
-    	}
+
+    public Serveur getIddServeur(String m) throws Exception {
+        Connecty connecty = new Connecty();
+        Connection c = connecty.getConnex();
+        Serveur bat = new Serveur();
+        String requete = "select id from Serveur where mail='" + m + "'";
+        Statement Stat = c.createStatement();
+        ResultSet res = Stat.executeQuery(requete);
+        while (res.next()) {
+            bat = new Serveur(res.getInt(1), res.getString(2), res.getString(3), res.getString(4));
+        }
         c.close();
-    	return bat;
+        return bat;
     }
-     
-       public int getNameServeur(int name) throws Exception {
+
+    public int getNameServeur(int name) throws Exception {
         int retour = 0;
         Connecty connecty = new Connecty();
         Connection c = connecty.getConnex();

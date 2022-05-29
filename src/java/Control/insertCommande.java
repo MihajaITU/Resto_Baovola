@@ -53,7 +53,7 @@ public class insertCommande extends HttpServlet {
                 int idProduit=id.findIdProduit(name);
                 String nom=request.getParameter("serveur");
                 ServiceServeur ids=new ServiceServeur();
-                int idServeur=ids.findIdServeur(nom);
+                int idServeur=ids.findIddServeur(nom).getId();
                 
                 int unite=Integer.parseInt(request.getParameter("qte"));
                 ServiceViewPrixProduit sv=new ServiceViewPrixProduit();

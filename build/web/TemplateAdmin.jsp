@@ -250,7 +250,7 @@
                     <div class="col-md-12">
                         <ul class="h-menu">
                             <li class="open active"><a href="#"><i class="zmdi zmdi-home"></i></a></li>
-                            <li><a href="Stock">Stock</a></li>
+                            <li><a href="Stock?st=1">Stock</a></li>
                             <li><a href="ListeServeur">Pourboire</a></li>
                             <li><a href="ListePrixReviens">Liste Plats et prix</a></li>
                         </ul>

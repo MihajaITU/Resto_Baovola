@@ -61,6 +61,11 @@ public class Stock extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
+        ViewStock vs = new ViewStock();
+        ViewStock[] listeStock = vs.getStock();
+        request.setAttribute("listeStock", listeStock);
+        RequestDispatcher dispat = request.getRequestDispatcher("/TemplateAdmin.jsp?p=Stock");
+        dispat.forward(request, response);
 
     }
 
