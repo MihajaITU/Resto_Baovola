@@ -59,7 +59,7 @@ public class LoginServeur extends HttpServlet {
                     request.setAttribute("Commande",liste);
                    request.getRequestDispatcher("/TemplateServeur.jsp?p=GestionCommande").forward(request, response);
                 }else{
-                    request.getRequestDispatcher("/loginServeur.jsp").forward(request, response);
+                    request.getRequestDispatcher("/LoginServeur.jsp").forward(request, response);
                 }
             }catch (Exception ex) {
             Logger.getLogger(LoginServeur.class.getName()).log(Level.SEVERE, null, ex);

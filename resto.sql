@@ -95,6 +95,10 @@ insert into Serveur values (nextval('serveur_sq'),'Rija','rija@gmail.com','rija0
 insert into Serveur values (nextval('serveur_sq'),'Lala','lala@gmail.com','lala0000');
 insert into Serveur values (nextval('serveur_sq'),'mika','mika@gmail.com','mika0000');
 
+ALTER TABLE Serveur 
+ ADD mail varchar(100),
+  ADD  mdp varchar(100);
+
 create table LogCuisine(
       id int,
     nom varchar(50),
@@ -103,10 +107,10 @@ create table LogCuisine(
     primary key(id)
 );
 
-create sequence cuisine_sq start with 1 increment by 1;
+create sequence logcuisine_sq start with 1 increment by 1;
 
 insert into LogCuisine values (nextval('logcuisine_sq'),'Rija','rija@gmail.com','rija0000');
-insert into LogCuisine values (nextval('logvuisine_sq'),'Lala','lala@gmail.com','lala0000');
+insert into LogCuisine values (nextval('logcuisine_sq'),'Lala','lala@gmail.com','lala0000');
 
 
   create TABLE cuisine(
@@ -142,7 +146,7 @@ join type_produit pt on pt.id = p.id_type_produit;
 
 -- plat cuit cuisine avec serveurs;
  create view view_produitAvecServeur as
-select p.designation as produit ,t.designation as type,s.nom, dc.id_Produit, dc.id_Serveur, c.marquage 
+select p.designation as produit ,t.designation as type,s.nom, dc.id_Produit, c.marquage 
  from detailsCommande dc
  join cuisine c on c.id_DetailCommande=dc.id_produit
  join produit p on p.id =dc.id_produit
