@@ -4,12 +4,10 @@
  */
 package Control;
 
-import classes.Admin;
-import classes.ViewPlatALivre;
-import classes.ViewStock;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author ASUS TUF
  */
-public class Stock extends HttpServlet {
+public class LogoutAdmin extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +37,10 @@ public class Stock extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Stock</title>");
+            out.println("<title>Servlet LogoutAdmin</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Stock at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LogoutAdmin at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,16 +59,13 @@ public class Stock extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        try {
-            ViewStock vs = new ViewStock();
-            ViewStock[] listeStock = vs.getStock();
-            request.setAttribute("listeStock", listeStock);
-            RequestDispatcher dispat = request.getRequestDispatcher("/TemplateAdmin.jsp?p=Stock");
-            dispat.forward(request, response);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        HttpSession sessionServeur = request.getSession();
+        ServletContext context = this.getServletContext();
+        String messageErreur = "Deconnexion du Serveur";
+        request.setAttribute("messageErreur", messageErreur);
+        sessionServeur.invalidate();
+        RequestDispatcher dispat = context.getRequestDispatcher("/Accueil.jsp");
+        dispat.forward(request, response);
     }
 
     /**
@@ -84,28 +79,7 @@ public class Stock extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-        try {
-            Admin adm = new Admin();
-            boolean valeur = adm.loginAdmin(request.getParameter("mail"), request.getParameter("mdp"));
-            HttpSession session = request.getSession();
-            if (valeur == true) {
-                Admin admin = adm.getAdmin(request.getParameter("mail"), request.getParameter("mdp"));
-
-                session.setAttribute("admin", admin);
-                ViewStock vs = new ViewStock();
-                ViewStock[] listeStock = vs.getStock();
-                request.setAttribute("listeStock", listeStock);
-                RequestDispatcher dispat = request.getRequestDispatcher("/TemplateAdmin.jsp?p=Stock");
-                dispat.forward(request, response);
-            } else {
-                request.getRequestDispatcher("/loginAdmin.jsp").forward(request, response);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        processRequest(request, response);
     }
 
     /**

@@ -112,7 +112,10 @@
         <servlet-name>LoginServeur</servlet-name>
         <servlet-class>Control.LoginServeur</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>LogoutAdmin</servlet-name>
+        <servlet-class>Control.LogoutAdmin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListeProduit</servlet-name>
         <url-pattern>/ListeProduit</url-pattern>
@@ -181,19 +184,19 @@
         <servlet-name>GestionCommande</servlet-name>
         <url-pattern>/GestionCommande</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>PlatPrepare</servlet-name>
         <url-pattern>/PlatPrepare</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>PlatCuit</servlet-name>
         <url-pattern>/PlatCuit</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>PlatDispo</servlet-name>
         <url-pattern>/PlatDispo</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>PlatNonLivree</servlet-name>
         <url-pattern>/PlatNonLivree</url-pattern>
     </servlet-mapping>
@@ -201,11 +204,11 @@
         <servlet-name>LoginLivreur</servlet-name>
         <url-pattern>/LoginLivreur</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>LoginCuisine</servlet-name>
         <url-pattern>/LoginCuisine</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>LoginServeur</servlet-name>
         <url-pattern>/LoginServeur</url-pattern>
     </servlet-mapping>
@@ -224,6 +227,10 @@
     <servlet-mapping>
         <servlet-name>LoginAdmin</servlet-name>
         <url-pattern>/LoginAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutAdmin</servlet-name>
+        <url-pattern>/LogoutAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

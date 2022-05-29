@@ -238,7 +238,7 @@
                         <a href="javascript:void(0);" class="btn_overlay"><i class="zmdi zmdi-sort-amount-desc"></i></a>
                         <a href="javascript:void(0);" class="js-right-sidebar"><i
                                 class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
-                        <a href="sign-in.html" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
+                        <a href="LogoutAdmin" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
                     </li>
                 </ul>
             </div>
