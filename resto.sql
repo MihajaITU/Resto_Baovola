@@ -127,7 +127,7 @@ insert into cuisine values (nextval('cuisine_sq'),2,'En cours');
 insert into cuisine values (nextval('cuisine_sq'),4,'Cuit');
 insert into cuisine values (nextval('cuisine_sq'),5,'Cuit');
 
--- view cuisisne plat cuit
+-- view cuisine plat cuit
 create view view_cuisine as 
  select p.designation as produit ,t.designation as type, dc.id_Produit, dc.id_Serveur, c.marquage 
  from detailsCommande dc
@@ -136,6 +136,7 @@ create view view_cuisine as
  join type_produit t on t.id =dc.id_Produit
 
  select * from view_cuisine where marquage='Cuit';
+
 
 -- view produit + prix+ type
  create view view_produitPrixType as
@@ -152,7 +153,6 @@ select p.designation as produit ,t.designation as type,s.nom, dc.id_Produit, c.m
  join produit p on p.id =dc.id_produit
  join type_produit t on t.id =dc.id_Produit  
  join Serveur s on s.id=dc.id_Serveur
-
 
 
 
