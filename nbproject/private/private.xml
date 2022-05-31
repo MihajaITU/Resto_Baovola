@@ -2,21 +2,49 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< Updated upstream
-        <group/>
-=======
         <group>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/AccueilClient.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/LogoutAdmin.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/AccueilAdmin.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/FicheRecette.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/NonPayer.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/TemplateAdmin.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/src/java/classes/Connecty.java</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/Livraison.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/web/listeVaika.jsp</file>
-            <file>file:/D:/Etudes-ITU/S6/Baovola/Final/Resto_Baovola/src/java/classes/Connec.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/DetailsCommande.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/Commande.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/ChoixServeur.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/servletListeIngredient.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Service/ServiceServeur.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/ListeProduit.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/loginAdmin.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/ListeProduit.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/Connecty.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/CommandeNonPayer.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/Serveur.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/ListePrixReviens.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/TemplateAdmin.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/Accueil.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/CommndeParType.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/ViewStock.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/ViewPrixProduit.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/LoginServer.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/Produit.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/loginLivreur.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/ListeServeur.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/listePrixProduit.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/Livreur.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/Commande.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/loginClient.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/Cuisine.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/ListePourBoire.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/LoginLivreur.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/Connec.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/Stock.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/LoginServeur.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/Stock.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/Recette.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Service/ServicePourBoire.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/WEB-INF/web.xml</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/TypeProduit.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/TemplateLivreur.jsp</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/classes/ViewPourBoire.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/insertCommande.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/ListeIngredient.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/src/java/Control/ListeType.java</file>
+            <file>file:/D:/Informatique/S6/Baovola/Resto_Baovola/web/pourboire.jsp</file>
         </group>
->>>>>>> Stashed changes
     </open-files>
 </project-private>
